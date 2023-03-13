@@ -2,7 +2,7 @@
 
 Available on mobile devices.
 
-## [DEMO] (https://tanya-grebenkina.github.io/react-nft-landing/)
+## [DEMO](https://tanya-grebenkina.github.io/react-nft-landing/)
 
 ### Really cool and fun landing page that will definitely make you smile :)
 
