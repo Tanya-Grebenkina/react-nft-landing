@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { Pagination, Navigation, Swiper, SwiperSlide, } from 'swiper/react';
+import 'swiper/css';
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css/navigation';
 
-import { Pagination, Navigation, Autoplay, EffectCards } from "swiper";
+import { Pagination, Navigation, Autoplay, EffectCards } from 'swiper';
 
 import img1 from '../assets/Nfts/bighead.svg';
 import img2 from '../assets/Nfts/bighead-1.svg';
