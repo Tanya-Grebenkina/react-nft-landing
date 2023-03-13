@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-// import 'swiper/css';
-// import "swiper/css/effect-cards";
-// import "swiper/css/pagination";
-// import 'swiper/css/navigation';
 import 'swiper/swiper.scss';
 import 'swiper/modules/effect-cards/effect-cards.scss';
 import 'swiper/modules/navigation/navigation.scss';
