@@ -6,9 +6,8 @@ import CoverVideo from '../CoverVideo';
 
 import RoundTextBlack from '../../assets/Rounded-Text-Black.png';
 
-
 const Section = styled.section`
-  min-height: ${props => `calc(100vh - ${props.theme.navHeight})` };
+  min-height: ${props => `calc(100vh - ${props.theme.navHeight})`};
   width: 100vw;
   position: relative;
   background-color: ${props => props.theme.body};
@@ -103,23 +102,21 @@ const Circle = styled.span`
   }
 `;
 
-const Home = () => {
-  return (
-    <Section id="home">
-      <Container>
-        <Box>
-          <TypeWriterText />
-        </Box>
-        <Box>
-          <CoverVideo />
-        </Box>
-        <Round>
-          <Circle>&#x2193;</Circle>
-          <img src={RoundTextBlack} alt="NFT" />
-        </Round>
-      </Container>
-    </Section>
-  );
-};
+const Home = () => (
+  <Section id="home">
+    <Container>
+      <Box>
+        <TypeWriterText />
+      </Box>
+      <Box>
+        <CoverVideo />
+      </Box>
+      <Round>
+        <Circle>&#x2193;</Circle>
+        <img src={RoundTextBlack} alt="NFT" />
+      </Round>
+    </Container>
+  </Section>
+);
 
 export default Home;

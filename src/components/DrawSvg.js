@@ -37,7 +37,7 @@ const Ball = styled.div`
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
-  background-color: ${(props) => props.theme.text};
+  background-color: ${props => props.theme.text};
   animation: ${Bounce} 0.5s linear infinite alternate;
 
   @media (max-width: 48em) {
@@ -51,17 +51,17 @@ const DrawSvg = () => {
 
   gsap.registerPlugin(ScrollTrigger);
   useLayoutEffect(() => {
-    let element = ref.current;
-    let svg = document.getElementsByClassName('svg-path')[0];
+    const element = ref.current;
+    const svg = document.getElementsByClassName('svg-path')[0];
     const length = svg.getTotalLength();
 
     // start positioning of svg drawing
     svg.style.strokeDasharray = length;
 
-    //hide svg before scrolling start
+    // hide svg before scrolling start
     svg.style.strokeDashoffset = length;
 
-    let t1 = gsap.timeline({
+    const t1 = gsap.timeline({
       scrollTrigger: {
         trigger: element,
         start: 'top center',
@@ -83,7 +83,9 @@ const DrawSvg = () => {
     });
 
     return () => {
-      if (t1) t1.kill();
+      if (t1) {
+        t1.kill();
+      }
     };
   }, []);
 

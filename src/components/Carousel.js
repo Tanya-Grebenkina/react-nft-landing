@@ -111,58 +111,57 @@ const Container = styled.div`
   }
 `;
 
-const Carousel = () => {
-  return (
-    <Container>
-      <Swiper
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          type: 'fraction',
-        }}
-        scrollbar={{
-          draggable: true,
-        }}
-        modules={[EffectCards, Pagination, Navigation, Autoplay]}
-        navigation={true}
-        effect={'cards'}
-        grabCursor={true}
-        className="mySwiper">
-        <SwiperSlide>
-          <img src={img1} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img2} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img3} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img4} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img5} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img6} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img7} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img8} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img9} alt="The Weirdos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img10} alt="The Weirdos" />
-        </SwiperSlide>
-      </Swiper>
-    </Container>
-  );
-};
+const Carousel = () => (
+  <Container>
+    <Swiper
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        type: 'fraction',
+      }}
+      scrollbar={{
+        draggable: true,
+      }}
+      modules={[EffectCards, Pagination, Navigation, Autoplay]}
+      navigation
+      effect="cards"
+      grabCursor
+      className="mySwiper"
+    >
+      <SwiperSlide>
+        <img src={img1} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img2} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img3} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img4} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img5} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img6} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img7} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img8} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img9} alt="The Weirdos" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={img10} alt="The Weirdos" />
+      </SwiperSlide>
+    </Swiper>
+  </Container>
+);
 
 export default Carousel;

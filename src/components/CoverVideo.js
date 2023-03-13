@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import GIF from '../assets/Home Video.mp4';
 
-
 const VideoContainer = styled.div`
   width: 100%;
 
@@ -15,12 +14,10 @@ const VideoContainer = styled.div`
     min-width: 40vh;
   }
 `;
-const CoverVideo = () => {
-  return (
-    <VideoContainer>
-      <video src={GIF} type="video/mp4" autoPlay muted loop />
-    </VideoContainer>
-  );
-};
+const CoverVideo = () => (
+  <VideoContainer>
+    <video src={GIF} type="video/mp4" autoPlay muted loop />
+  </VideoContainer>
+);
 
 export default CoverVideo;

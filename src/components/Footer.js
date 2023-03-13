@@ -11,9 +11,9 @@ import LinkedIn from '../Icons/LinkedIn';
 const Section = styled.section`
   min-height: 100vh;
   width: 100vw;
-  background-color: ${(props) => props.theme.body};
+  background-color: ${props => props.theme.body};
   position: relative;
-  color: ${(props) => props.theme.text};
+  color: ${props => props.theme.text};
 
   display: flex;
   flex-direction: column;
@@ -26,13 +26,13 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  border-bottom: 1px solid ${(props) => props.theme.text};
+  border-bottom: 1px solid ${props => props.theme.text};
 
   @media (max-width: 48em) {
     width: 90%;
 
     h1 {
-      font-size: ${(props) => props.theme.fontxxxl};
+      font-size: ${props => props.theme.fontxxxl};
     }
   }
 `;
@@ -85,7 +85,7 @@ const Item = styled.li`
     display: block;
     width: 0%;
     height: 2px;
-    background: ${(props) => props.theme.text};
+    background: ${props => props.theme.text};
     transition: width 0.3s ease;
   }
   &:hover::after {
@@ -116,7 +116,7 @@ const Bottom = styled.div`
 
 const Footer = () => {
   const scrollTo = (id) => {
-    let element = document.getElementById(id);
+    const element = document.getElementById(id);
 
     element.scrollIntoView({
       behavior: 'smooth',
@@ -156,7 +156,11 @@ const Footer = () => {
         </MenuItems>
       </Container>
       <Bottom>
-        <span>&copy; {new Date().getFullYear()} Weirdos Club.</span>
+        <span>
+          &copy;
+          {new Date().getFullYear()}
+          Weirdos Club.
+        </span>
         <span>Made with &#10084;</span>
       </Bottom>
     </Section>

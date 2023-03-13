@@ -22,7 +22,7 @@ const Title = styled.h1`
   border-bottom: 2px solid ${props => props.theme.text};
   width: fit-content;
 
-  @media(max-width: 40em){
+  @media (max-width: 40em) {
     font-size: ${props => props.theme.fontxl};
   }
 `;
@@ -60,45 +60,45 @@ const Items = styled.ul`
   justify-content: center;
   align-items: center;
 
-  @media(max-width: 48em){
+  @media (max-width: 48em) {
     width: 90%;
   }
 
-  &>*:nth-of-type(2n + 1){
+  & > *:nth-of-type(2n + 1) {
     justify-content: start;
 
-    @media(max-width: 48em){
+    @media (max-width: 48em) {
       justify-content: center;
     }
 
-    div{
+    div {
       border-radius: 50px 0 50px 0;
       text-align: right;
 
-      @media(max-width: 48em){
+      @media (max-width: 48em) {
         border-radius: 0 50px 0 50px;
         text-align: left;
-        p{
+        p {
           border-radius: 0 40px 0 40px;
         }
       }
     }
-    p{
+    p {
       border-radius: 40px 0 40px 0;
     }
   }
-  &>*:nth-of-type(2n){
+  & > *:nth-of-type(2n) {
     justify-content: end;
 
-    @media(max-width: 48em){
+    @media (max-width: 48em) {
       justify-content: center;
     }
 
-    div{
+    div {
       border-radius: 0 50px 0 50px;
       text-align: left;
     }
-    p{
+    p {
       border-radius: 0 40px 0 40px;
     }
   }
@@ -109,7 +109,7 @@ const Item = styled.li`
   height: 100%;
   display: flex;
 
-  @media(max-width: 48em){
+  @media (max-width: 48em) {
     justify-content: flex-end !important;
   }
 `;
@@ -119,7 +119,7 @@ const ItemContainer = styled.div`
   padding: 1rem;
   border: 3px solid ${props => props.theme.text};
 
-  @media(max-width: 48em){
+  @media (max-width: 48em) {
     width: 70%;
   }
 `;
@@ -139,7 +139,7 @@ const SubTitle = styled.span`
   text-transform: capitalize;
   color: ${props => props.theme.text};
 
-  @media(max-width: 40em){
+  @media (max-width: 40em) {
     font-size: ${props => props.theme.fontlg};
     font-weight: 600;
   }
@@ -154,60 +154,60 @@ const Text = styled.span`
   font-weight: 400;
   margin: 0.5rem 0;
 
-  @media(max-width: 40em){
+  @media (max-width: 40em) {
     font-size: ${props => props.theme.fontxs};
   }
 `;
 
-const RoadMapItem = ({ title, subtext, addToRefs }) => {
-  return (
-    <Item ref={addToRefs}>
-      <ItemContainer>
-        <Box>
-          <SubTitle>{title}</SubTitle>
-          <Text>{subtext}</Text>
-        </Box>
-      </ItemContainer>
-    </Item>
-  );
-};
+// eslint-disable-next-line react/prop-types
+const RoadMapItem = ({ title, subtext, addToRefs }) => (
+  <Item ref={addToRefs}>
+    <ItemContainer>
+      <Box>
+        <SubTitle>{title}</SubTitle>
+        <Text>{subtext}</Text>
+      </Box>
+    </ItemContainer>
+  </Item>
+);
 
 const Roadmap = () => {
   const revealRefs = useRef([]);
+
   revealRefs.current = [];
   gsap.registerPlugin(ScrollTrigger);
 
   const addToRefs = (el) => {
-    if(el && !revealRefs.current.includes(el)) {
+    if (el && !revealRefs.current.includes(el)) {
       revealRefs.current.push(el);
     }
-  }
+  };
 
   useLayoutEffect(() => {
-    let t1 = gsap.timeline();
-    revealRefs.current.forEach((el, index) => {
+    const t1 = gsap.timeline();
 
+    revealRefs.current.forEach((el, index) => {
       t1.fromTo(
         el.childNodes[0],
         {
-          y: '0'
-        },{
+          y: '0',
+        },
+        {
           y: '-30%',
 
-          scrollTrigger:{
+          scrollTrigger: {
             id: `section-${index + 1}`,
             trigger: el,
             start: 'top center+=200px',
             end: 'bottom center',
             scrub: true,
-          }
-        }
-      )
-    })
-  
-    return () => {
-    };
-  }, [])
+          },
+        },
+      );
+    });
+
+    return () => {};
+  }, []);
 
   return (
     <Section id="roadmap">
@@ -217,16 +217,46 @@ const Roadmap = () => {
           <DrawSvg />
         </SvgContainer>
         <Items>
-        <Item>&nbsp;</Item>
-          <RoadMapItem addToRefs={addToRefs} title="Grand Opening" subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat." />
-          <RoadMapItem addToRefs={addToRefs} title="Great Benefits" subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat." />
-          <RoadMapItem addToRefs={addToRefs} title="Early Access" subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat." />
-          <RoadMapItem addToRefs={addToRefs} title="New Merch" subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat." />
-          <RoadMapItem addToRefs={addToRefs} title="Holders Ranking" subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat." />
+          <Item>&nbsp;</Item>
+          <RoadMapItem
+            addToRefs={addToRefs}
+            title="Grand Opening"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur,
+            Adipisicing Elit. At Repellat Placeat,
+            Adipisicing Elit. At Repellat Placeat."
+          />
+          <RoadMapItem
+            addToRefs={addToRefs}
+            title="Great Benefits"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur,
+            Adipisicing Elit. At Repellat Placeat,
+            Adipisicing Elit. At Repellat Placeat."
+          />
+          <RoadMapItem
+            addToRefs={addToRefs}
+            title="Early Access"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur,
+            Adipisicing Elit. At Repellat Placeat,
+            Adipisicing Elit. At Repellat Placeat."
+          />
+          <RoadMapItem
+            addToRefs={addToRefs}
+            title="New Merch"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur,
+            Adipisicing Elit. At Repellat Placeat,
+            Adipisicing Elit. At Repellat Placeat."
+          />
+          <RoadMapItem
+            addToRefs={addToRefs}
+            title="Holders Ranking"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur,
+            Adipisicing Elit. At Repellat Placeat,
+            Adipisicing Elit. At Repellat Placeat."
+          />
         </Items>
       </Container>
     </Section>
-  )
-}
+  );
+};
 
 export default Roadmap;

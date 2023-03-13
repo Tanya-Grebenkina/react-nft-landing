@@ -49,7 +49,7 @@ list-style: none;
   background-color: ${props => `rgba(${props.theme.bodyRgba}, 0.85)`};
   backdrop-filter: blur(2px);
 
-  transform: ${props => props.click ? 'translateY(0)' : 'translateY(1000%)'};
+  transform: ${props => (props.click ? 'translateY(0)' : 'translateY(1000%)')};
   transition: all 0.3s ease;
   flex-direction: column;
   justify-content: center;
@@ -85,13 +85,16 @@ cursor: pointer;
 `;
 
 const HamburgerNenu = styled.span`
-  width: ${props => props.click ? '2rem' : '1.5rem'};
+  width: ${props => (props.click ? '2rem' : '1.5rem')};
   height: 2px;
   background: ${props => props.theme.text};
   position: absolute;
   top: 2rem;
   left: 50%;
-  transform: ${props => props.click ? 'translateX(-50%) rotate(90deg)' : 'translateX(-50%) rotate(0)'};
+  transform: ${props => (
+    props.click
+      ? 'translateX(-50%) rotate(90deg)'
+      : 'translateX(-50%) rotate(0)')};
   display: none;
   justify-content: center;
   align-items: center;
@@ -105,28 +108,28 @@ const HamburgerNenu = styled.span`
   
   &:after, &:before{
     content: '';
-    width: ${props => props.click ? '1rem' : '1.5rem'};
+    width: ${props => (props.click ? '1rem' : '1.5rem')};
     height: 2px;
-    right: ${props => props.click ? '-2px' : '0'};
+    right: ${props => (props.click ? '-2px' : '0')};
     background: ${props => props.theme.text};
     position: absolute;
     transition: all 0.3s ease;
   }
 
   &:after{
-    top: ${props => props.click ? '0.3rem' : '0.5rem'};
-    transform: ${props => props.click ? 'rotate(-40deg)' : 'rotate(0)'};
+    top: ${props => (props.click ? '0.3rem' : '0.5rem')};
+    transform: ${props => (props.click ? 'rotate(-40deg)' : 'rotate(0)')};
   }
   &:before{
-    bottom: ${props => props.click ? '0.3rem' : '0.5rem'};
-    transform: ${props => props.click ? 'rotate(40deg)' : 'rotate(0)'};
+    bottom: ${props => (props.click ? '0.3rem' : '0.5rem')};
+    transform: ${props => (props.click ? 'rotate(40deg)' : 'rotate(0)')};
   }
 `;
 
 const Navigation = () => {
   const [click, setClick] = useState(false);
   const scrollTo = (id) => {
-    let element = document.getElementById(id);
+    const element = document.getElementById(id);
 
     element.scrollIntoView({
       behavior: 'smooth',
