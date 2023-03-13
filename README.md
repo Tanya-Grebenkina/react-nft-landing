@@ -1,9 +1,15 @@
-# React Starter Pack
+# Weirdos NFT React landing page.
 
-To use this template click `Use this template`
+Available on mobile devices.
 
-### Available Scripts
+## [DEMO] (https://tanya-grebenkina.github.io/react-nft-landing/)
 
-`Deploy` - available to deploy your application to gh-pages
+### Really cool and fun landing page that will definitely make you smile :)
 
-`SCSS Preprocessor` - available to write your styles with modern style language
+🛠 Created with React and third-party libraries, some of them:
++ styled-components;
++ GSAP;
++ type-writer effect;
++ react-confetti;
++ react-use.
+
