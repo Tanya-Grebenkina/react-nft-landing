@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -116,37 +118,32 @@ const Position = styled.h2`
   font-weight: 400;
 `;
 
-const MemberComponent = ({img, name="", position=""}) => {
+const MemberComponent = ({ img, name = '', position = '' }) => (
+  <Item>
+    <ImageContainer>
+      <img src={img} alt={name} />
+    </ImageContainer>
+    <Name>{name}</Name>
+    <Position>{position}</Position>
+  </Item>
+);
 
-  return (
-    <Item>
-      <ImageContainer>
-        <img src={img} alt={name} />
-      </ImageContainer>
-      <Name>{name}</Name>
-      <Position>{position}</Position>
-    </Item>
-  )
-};
-
-const Team = () => {
-  return (
-    <Section id="team">
-      <ConfettiComponent />
-      <Title>Team</Title>
-      <Container>
-        <MemberComponent img={img1} name="SKYBLAZE" position="founder" />
-        <MemberComponent img={img2} name="MEGNUM" position="Co-Founder" />
-        <MemberComponent img={img3} name="MONKEY KING" position="Director" />
-        <MemberComponent img={img4} name="BLACK PANTHER" position="manager" />
-        <MemberComponent img={img5} name="DEATHSTROKE" position="artist" />
-        <MemberComponent img={img6} name="LAZY KONG" position="social media manager" />
-        <MemberComponent img={img7} name="CYBER PUNK" position="Blockchain Specialist" />
-        <MemberComponent img={img8} name="MONK" position="Web3 Developer" />
-        <MemberComponent img={img9} name="BANANA" position="Graphic Designer" />
-      </Container>
-    </Section>
-  );
-};
+const Team = () => (
+  <Section id="team">
+    <ConfettiComponent />
+    <Title>Team</Title>
+    <Container>
+      <MemberComponent img={img1} name="SKYBLAZE" position="founder" />
+      <MemberComponent img={img2} name="MEGNUM" position="Co-Founder" />
+      <MemberComponent img={img3} name="MONKEY KING" position="Director" />
+      <MemberComponent img={img4} name="BLACK PANTHER" position="manager" />
+      <MemberComponent img={img5} name="DEATHSTROKE" position="artist" />
+      <MemberComponent img={img6} name="LAZY KONG" position="social media manager" />
+      <MemberComponent img={img7} name="CYBER PUNK" position="Blockchain Specialist" />
+      <MemberComponent img={img8} name="MONK" position="Web3 Developer" />
+      <MemberComponent img={img9} name="BANANA" position="Graphic Designer" />
+    </Container>
+  </Section>
+);
 
 export default Team;
