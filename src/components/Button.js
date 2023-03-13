@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -35,16 +36,14 @@ const Btn = styled.button`
     transform: translate(-50%, -50%) scale(1);
     padding: 0.3rem;
   }
-`
+`;
 
-const Button = ({text, link}) => {
-  return (
-    <Btn>
-      <a href={link} arial-label={text} target="_blank" rel="noreferrer">
-        {text}
-      </a>
-    </Btn>
-  )
-};
+const Button = ({ text, link }) => (
+  <Btn>
+    <a href={link} arial-label={text} target="_blank" rel="noreferrer">
+      {text}
+    </a>
+  </Btn>
+);
 
-export default Button
+export default Button;

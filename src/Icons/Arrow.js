@@ -1,6 +1,8 @@
-import * as React from "react"
+/* eslint-disable max-len */
+/* eslint-disable react/prop-types */
+import * as React from 'react';
 
-const Arrow = (props) => (
+const Arrow = props => (
   <svg
     width={props.width || 50}
     height={props.height || 50}
@@ -43,6 +45,6 @@ const Arrow = (props) => (
       </filter>
     </defs>
   </svg>
-)
+);
 
-export default Arrow
+export default Arrow;

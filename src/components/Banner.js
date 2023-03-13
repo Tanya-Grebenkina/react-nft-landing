@@ -56,23 +56,23 @@ const ImgContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontxxxl};
-  color: ${(props) => props.theme.body};
+  font-size: ${props => props.theme.fontxxxl};
+  color: ${props => props.theme.body};
   padding: 1rem 2rem;
   z-index: 10;
   width: 35%;
   text-transform: capitalize;
 
-  text-shadow: 1px 1px 2px ${(props) => props.theme.text};
+  text-shadow: 1px 1px 2px ${props => props.theme.text};
 
   @media (max-width: 64em) {
-    font-size: ${(props) => props.theme.fontxxl};
+    font-size: ${props => props.theme.fontxxl};
     text-align: center;
     width: 40%;
   }
 
   @media (max-width: 48em) {
-    font-size: ${(props) => props.theme.fontxl};
+    font-size: ${props => props.theme.fontxl};
     padding: 2rem 0;
     width: 100%;
   }
@@ -132,27 +132,32 @@ const JoinNow = styled.button`
     transform: translate(-50%, -50%) scale(1);
     padding: 0.3rem;
   }
-`
+`;
 
-const Banner = () => {
-  return (
-    <Section>
-      <ImgContainer>
-        <img src={img1} alt="The Weirdos" />
-        <img src={img2} alt="The Weirdos" />
-        <img src={img3} alt="The Weirdos" />
-        <img src={img4} alt="The Weirdos" />
-        <img src={img5} alt="The Weirdos" />
-        <img src={img6} alt="The Weirdos" />
-      </ImgContainer>
-      <Title> Join the <br /> weirdos club </Title>
-      <BtnContainer>
-        <JoinNow>
-          Join Now
-        </JoinNow>
-      </BtnContainer>
-    </Section>
-  )
-};
+const Banner = () => (
+  <Section>
+    <ImgContainer>
+      <img src={img1} alt="The Weirdos" />
+      <img src={img2} alt="The Weirdos" />
+      <img src={img3} alt="The Weirdos" />
+      <img src={img4} alt="The Weirdos" />
+      <img src={img5} alt="The Weirdos" />
+      <img src={img6} alt="The Weirdos" />
+    </ImgContainer>
+    <Title>
+      {' '}
+      Join the
+      <br />
+      {' '}
+      weirdos club
+      {' '}
+    </Title>
+    <BtnContainer>
+      <JoinNow>
+        Join Now
+      </JoinNow>
+    </BtnContainer>
+  </Section>
+);
 
 export default Banner;

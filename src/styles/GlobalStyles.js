@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import "@fontsource/akaya-telivigala";
-import "@fontsource/sora";
+import { createGlobalStyle } from 'styled-components';
+import '@fontsource/akaya-telivigala';
+import '@fontsource/sora';
 
 const GlobalStyles = createGlobalStyle`
 
@@ -22,5 +22,6 @@ a{
   color: inherit;
   text-decoration: none;
 }
-`
+`;
+
 export default GlobalStyles;
