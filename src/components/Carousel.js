@@ -1,12 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Pagination, Navigation, Swiper, SwiperSlide, } from 'swiper/react';
-import 'swiper/css';
-import "swiper/css/effect-cards";
-import "swiper/css/pagination";
-import 'swiper/css/navigation';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
+// import 'swiper/css';
+// import "swiper/css/effect-cards";
+// import "swiper/css/pagination";
+// import 'swiper/css/navigation';
+import 'swiper/swiper.scss';
+import 'swiper/modules/effect-cards/effect-cards.scss';
+import 'swiper/modules/navigation/navigation.scss';
+import 'swiper/modules/pagination/pagination.scss';
 
-import { Pagination, Navigation, Autoplay, EffectCards } from 'swiper';
+import { Pagination, Navigation, EffectCards, Autoplay } from 'swiper';
 
 import img1 from '../assets/Nfts/bighead.svg';
 import img2 from '../assets/Nfts/bighead-1.svg';
@@ -160,4 +165,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel
+export default Carousel;
